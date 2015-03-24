@@ -77,7 +77,7 @@
     NeoBundle 'tpope/vim-repeat'
 
     " NeoComplete
-    NeoBundle 'Shougo/neocomplete.vim'
+    " NeoBundle 'Shougo/neocomplete.vim'
     NeoBundle 'Shougo/neosnippet.vim'
     NeoBundle 'Shougo/neosnippet-snippets'
 
