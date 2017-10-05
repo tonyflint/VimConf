@@ -77,7 +77,7 @@
     NeoBundle 'tpope/vim-repeat'
 
     " NeoComplete
-    " NeoBundle 'Shougo/neocomplete.vim'
+    NeoBundle 'Shougo/neocomplete.vim'
     NeoBundle 'Shougo/neosnippet.vim'
     NeoBundle 'Shougo/neosnippet-snippets'
 
@@ -131,6 +131,7 @@
 " }
 
 " General {
+    set clipboard=unnamed
     set backspace=indent,eol,start " make backspace a more flexible
     set backup " make backup files
     set history=1000         " remember more commands and search history
@@ -221,11 +222,11 @@
     set shiftround " when at 3 spaces, and I hit > ... go to 4, not 5
     set smartcase " if there are caps, go case-sensitive
     set nosmartindent " turn off smart indent so comments work in Python
-    set shiftwidth=4 " auto-indent amount when using cindent,
+    set shiftwidth=2 " auto-indent amount when using cindent,
                       " >>, << and stuff like that
-    set softtabstop=4 " when hitting tab or backspace, how many spaces
+    set softtabstop=2 " when hitting tab or backspace, how many spaces
                        "should a tab be (see expandtab)
-    set tabstop=4 " We don't care about real tabs...
+    set tabstop=2 " We don't care about real tabs...
 " }
 
 " Mappings {
@@ -297,6 +298,7 @@
     inoremap <S-Up> <Esc>10ki
     vnoremap <S-Down> 10j
     vnoremap <S-Up> 10k
+
     " Send the selected hunk to IWS's hastebin
     vnoremap <Leader>hb <esc>:'<,'>:w !HASTE_SERVER=http://hastebin.britecorepro.com haste<CR>
     " Jump easily between open windows
@@ -343,7 +345,7 @@
     let coffee_compile_vert=1 " When compiling CoffeeScript, throw output into vertical split
     let coffee_make_options='--bare'
     let g:syntastic_check_on_open=1 " Run Syntastic when opening files
-    let g:syntastic_python_checkers=['python', 'pyflakes'] " Be more strict in python syntax
+    let g:syntastic_python_checkers=['python', 'flake8'] " Be more strict in python syntax
     let g:ftplugin_sql_omni_key='<C-S>' " reset sql omni key
     let NERDSpaceDelims=1 " Add space delimiters
     let g:gitgutter_eager=0 " Only run gitgutter on read/write of files
